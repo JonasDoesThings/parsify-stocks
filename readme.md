@@ -38,7 +38,7 @@ Any of the options below
 ###### upperCase
 
 Type: `boolean`\
-Default: `false`
+Default: `process.env.UPPER_CASE`
 
 Whether the output should be upper case or not.
 

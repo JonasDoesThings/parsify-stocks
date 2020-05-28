@@ -10,6 +10,11 @@ test('with options', async t => {
 	t.is(await parsifyExamplePlugin({upperCase: true})('hello'), 'HELLO WORLD!');
 });
 
+test('with environmental variable', async t => {
+	process.env.UPPER_CASE = 'true';
+	t.is(await parsifyExamplePlugin()('hello'), 'HELLO WORLD!');
+});
+
 test('if an error occurs, just output the expression', async t => {
 	t.is(await parsifyExamplePlugin()('foo / bar'), 'foo / bar');
 });
