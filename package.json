@@ -1,6 +1,6 @@
 {
     "name": "parsify-stocks",
-    "version": "0.0.1",
+    "version": "1.0",
     "description": "Parsify plugin for fetching stock data",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
