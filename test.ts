@@ -1,20 +1,15 @@
 import test from 'ava';
-
-import parsifyExamplePlugin from './src';
+import Parsify from '@parsify/core';
+import parsifyStocksPlugin from './src';
 
 test('general', async t => {
-	t.is(await parsifyExamplePlugin()('hello'), 'hello world!');
-});
+	const parsify = new Parsify([
+		parsifyStocksPlugin()
+	]);
 
-test('with options', async t => {
-	t.is(await parsifyExamplePlugin({upperCase: true})('hello'), 'HELLO WORLD!');
-});
-
-test('with environmental variable', async t => {
-	process.env.UPPER_CASE = 'true';
-	t.is(await parsifyExamplePlugin()('hello'), 'HELLO WORLD!');
-});
-
-test('if an error occurs, just output the expression', async t => {
-	t.is(await parsifyExamplePlugin()('foo / bar'), 'foo / bar');
+	t.not(await parsify.parse('$TSLA'), '$TSLA');
+	t.is(await parsify.parse('$ TSLA'), '$ TSLA');
+	t.is(await parsify.parse('TSLA'), 'TSLA');
+	t.is(await parsify.parse('$'), '$');
+	t.is(await parsify.parse('$NOTEXISTING'), '$NOTEXISTING');
 });
