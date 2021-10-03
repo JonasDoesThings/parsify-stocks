@@ -1,46 +1,25 @@
-# Parsify Plugin Hello World
-
-[![Build Status](https://travis-ci.com/parsify-dev/plugin-boilerplate-typescript.svg?branch=master)](https://travis-ci.com/parsify-dev/plugin-boilerplate-typescript) 
-[![Coverage Status](https://coveralls.io/repos/github/parsify-dev/plugin-boilerplate-typescript/badge.svg?branch=master)](https://coveralls.io/github/parsify-dev/plugin-boilerplate-typescript?branch=master)
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
+# Parsify Stocks
 
 ## About
 
-This plugin displays the `hello world!` message, when the user enters `hello` expression.
+This plugin allows to fetch the last price of a stock by using its ticker (e.g. $MSFT).
 
 ## Install
 
 ```
-$ npm install @parsify/core parsify-plugin-hello-world
+$ npm install parsify-stocks
 ```
 
 ## Usage
 
 ```js
 import Parsify from '@parsify/core';
-import parsifyPluginHelloWorld from 'parsify-plugin-hellow-world';
+import parsifyStocksPlugin from 'parsify-stocks';
 
 const parsify = new Parsify([
-    parsifyPluginHelloWorld();
+    parsifyStocksPlugin()
 ]);
 ```
-
-## API
-
-#### parsifyPluginHelloWorld(options?)
-
-##### options
-
-Type: `object`
-
-Any of the options below
-
-###### upperCase
-
-Type: `boolean`\
-Default: `process.env.UPPER_CASE`
-
-Whether the output should be upper case or not.
 
 ## License
 
