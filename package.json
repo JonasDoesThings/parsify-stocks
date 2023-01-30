@@ -10,7 +10,7 @@
     ],
     "author": "Jonas Lorenz <jonas@jonasdoesthings.com> (https://jonasdoesthings.com)",
     "bugs": {
-        "url": "https://github.com/k4ds3/parsify-stocks/issues"
+        "url": "https://github.com/JonasDoesThings/parsify-stocks/issues"
     },
     "scripts": {
         "prebuild": "del-cli dist",
@@ -24,8 +24,8 @@
         "node": ">=10"
     },
     "license": "MIT",
-    "repository": "k4ds3/parsify-stocks",
-    "homepage": "https://github.com/k4ds3/parsify-stocks",
+    "repository": "JonasDoesThings/parsify-stocks",
+    "homepage": "https://github.com/JonasDoesThings/parsify-stocks",
     "keywords": [
         "parsify",
         "parsify-plugin",
